@@ -1,0 +1,8 @@
+
+server.port: 8887
+spring.kafka.consumer:
+    enable-auto-commit: true
+    auto-offset-reset: earliest
+    bootstrap-server: localhost:9092
+    key-serializer : org.apache.kafka.common.serialization.LongSerializer
+    value-serializer : io.confluent.kafka.serializers.KafkaAvroSerializer

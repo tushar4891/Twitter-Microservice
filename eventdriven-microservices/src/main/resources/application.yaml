@@ -1,0 +1,19 @@
+server.port: 8091
+
+twitter-to-kafka-services:
+    twitter-keywords:
+    - Kafka
+    - Java
+    - Microservices
+    - ElasticSearch
+welcome-message: Hello Microservices !
+
+spring.kafka.producer:
+    client-id: twitter-topic
+    bootstrap-server: localhost:9092
+    key-serializer : org.apache.kafka.common.serialization.LongSerializer
+    value-serializer : io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+        schema.registry.url: http://localhost:8081
+    config.import: optional:configserver:http://localhost:8092
+    
